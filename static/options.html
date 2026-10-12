@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dusk settings</title>
+    <link rel="icon" href="icons/32.png" />
+    <link rel="stylesheet" href="ui.css" />
+    <style>
+      /* design/dusk.mat: "Options — Desktop" */
+      body {
+        display: flex;
+        min-height: 100vh;
+      }
+      nav {
+        width: 248px;
+        flex: none;
+        border-right: 1px solid var(--border);
+      }
+      .nav-inner {
+        position: sticky;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 28px 16px;
+      }
+      .brand {
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+        padding: 0 10px 24px;
+      }
+      .brand .wordmark {
+        font-size: 28px;
+        letter-spacing: -1px;
+      }
+      .brand .version {
+        font: 400 11px var(--mono);
+        color: var(--muted);
+      }
+      nav a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: 36px;
+        padding: 0 10px;
+        border-radius: 8px;
+        color: var(--muted);
+        text-decoration: none;
+        font: 400 14px/1.4 'Inter', system-ui, sans-serif;
+      }
+      nav a .icon {
+        width: 16px;
+        height: 16px;
+      }
+      nav a:hover {
+        color: var(--text);
+      }
+      nav a.active {
+        background: var(--raised);
+        color: var(--text);
+        font-weight: 600;
+      }
+      nav a.active .icon {
+        color: var(--primary);
+      }
+      main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 56px;
+        padding: 48px 64px 80px;
+      }
+      main > section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 760px;
+        scroll-margin-top: 48px;
+      }
+      h2 {
+        margin: 0 0 6px;
+        font: 600 20px/1.3 var(--display);
+      }
+      .desc {
+        margin: 0;
+        font: 400 14px/1.45 'Inter', system-ui, sans-serif;
+        color: var(--muted);
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: var(--surface);
+        overflow: hidden;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        padding: 16px 20px;
+      }
+      .row + .row {
+        border-top: 1px solid var(--border);
+      }
+      .row-text {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        flex: 1;
+      }
+      .row-text strong {
+        font: 600 14px/1.4 'Inter', system-ui, sans-serif;
+      }
+      .row-text span {
+        font: var(--ui-small);
+        color: var(--muted);
+      }
+      .seg.engine {
+        background: var(--bg);
+      }
+      .seg.engine button {
+        flex: none;
+        width: 92px;
+      }
+
+      /* Appearance */
+      .appearance {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .controls {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: var(--surface);
+      }
+      .color-pickers {
+        display: flex;
+        gap: 12px;
+        padding-top: 8px;
+      }
+      .picker {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 10px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--bg);
+        cursor: pointer;
+      }
+      .picker input {
+        appearance: none;
+        width: 22px;
+        height: 22px;
+        padding: 0;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .picker input::-webkit-color-swatch-wrapper {
+        padding: 0;
+      }
+      .picker input::-webkit-color-swatch {
+        border: 0;
+        border-radius: 5px;
+      }
+      .picker small {
+        display: block;
+        font: var(--ui-small);
+        color: var(--muted);
+      }
+      .picker code {
+        font: 400 12px var(--mono);
+        text-transform: uppercase;
+      }
+      .controls .link {
+        align-self: flex-start;
+      }
+      .preview {
+        width: 300px;
+        flex: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+      }
+      .preview .kicker {
+        font: 500 12px/1.35 var(--mono);
+        letter-spacing: 0.5px;
+      }
+      .preview h3 {
+        margin: 0;
+        font: 700 20px/1.3 var(--display);
+        letter-spacing: -0.4px;
+      }
+      .preview p {
+        margin: 0;
+        font: 400 13px/1.55 'Inter', system-ui, sans-serif;
+      }
+      .preview .callout {
+        padding: 10px 12px;
+        border: 1px solid;
+        border-radius: 8px;
+        font: 400 12.5px/1.4 'Inter', system-ui, sans-serif;
+      }
+      .preview a {
+        font: 600 13px/1.4 'Inter', system-ui, sans-serif;
+        text-decoration: none;
+      }
+
+      /* Schedule */
+      .choices {
+        display: flex;
+        gap: 12px;
+      }
+      .choice {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 16px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: var(--surface);
+        cursor: pointer;
+      }
+      .choice:has(input:checked) {
+        border: 1.5px solid var(--primary);
+        padding: 15.5px;
+      }
+      .choice-top {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font: 600 14px/1.4 'Inter', system-ui, sans-serif;
+      }
+      .choice input {
+        appearance: none;
+        width: 16px;
+        height: 16px;
+        margin: 0;
+        border: 1.5px solid var(--muted);
+        border-radius: 50%;
+      }
+      .choice input:checked {
+        border: 0;
+        background: var(--primary);
+      }
+      .choice .note {
+        font: var(--ui-small);
+        color: var(--muted);
+      }
+      .times {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .times input {
+        width: 72px;
+        padding: 5px 10px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--bg);
+        font: 400 13px var(--mono);
+      }
+      .times input::-webkit-calendar-picker-indicator {
+        display: none;
+      }
+      .times .icon {
+        width: 14px;
+        height: 14px;
+        color: var(--muted);
+      }
+
+      /* Sites */
+      .toolbar {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 12px 12px 16px;
+        border-bottom: 1px solid var(--border);
+      }
+      .search {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        height: 34px;
+        padding: 0 10px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--bg);
+      }
+      .search:focus-within {
+        border-color: var(--primary);
+      }
+      .search .icon {
+        width: 14px;
+        height: 14px;
+        color: var(--muted);
+      }
+      .search input {
+        flex: 1;
+        border: 0;
+        background: none;
+        outline: none;
+        font: var(--ui);
+      }
+      .search input::placeholder {
+        color: var(--muted);
+      }
+      .new-site {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 12px 12px 16px;
+        background: var(--raised);
+        border-bottom: 1px solid var(--border);
+      }
+      .new-site .text-input {
+        flex: 1;
+      }
+      .new-site .select select {
+        height: 34px;
+      }
+      #siteError {
+        padding: 0 16px 12px;
+        background: var(--raised);
+        font: var(--ui-small);
+        color: var(--accent);
+      }
+      #siteList {
+        display: flex;
+        flex-direction: column;
+        padding: 6px 8px;
+      }
+      .empty {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        padding: 32px 16px;
+        text-align: center;
+      }
+      .empty strong {
+        font: 600 14px/1.4 'Inter', system-ui, sans-serif;
+      }
+      .empty span {
+        max-width: 360px;
+        font: var(--ui-small);
+        color: var(--muted);
+      }
+
+      /* Shortcuts */
+      .shortcut {
+        justify-content: space-between;
+        padding: 14px 20px;
+        font: 400 14px/1.4 'Inter', system-ui, sans-serif;
+      }
+      .keys {
+        display: flex;
+        gap: 4px;
+      }
+      kbd {
+        padding: 3px 8px;
+        border: 1px solid var(--border);
+        border-bottom-width: 2px;
+        border-radius: 5px;
+        background: var(--bg);
+        font: 400 12px var(--mono);
+      }
+      .desc a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+      .desc a:hover {
+        text-decoration: underline;
+      }
+
+      /* Your fixes */
+      .section-head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .fix-group {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 8px 8px;
+      }
+      .fix-group + .fix-group {
+        border-top: 1px solid var(--border);
+      }
+      .fix-group > strong {
+        padding: 4px 10px 6px;
+        font: var(--ui-strong);
+      }
+      .fix-group .site-row .host {
+        font: 400 12px var(--mono);
+        color: var(--muted);
+      }
+      .fix-group .tag {
+        cursor: default;
+      }
+
+      /* About */
+      .stats {
+        display: flex;
+        gap: 12px;
+      }
+      .stat {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 18px 20px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: var(--surface);
+      }
+      .stat strong {
+        font: 700 30px/1.15 var(--display);
+        letter-spacing: -0.8px;
+      }
+      .stat span {
+        font: var(--ui-small);
+        color: var(--muted);
+      }
+      .cache .btn {
+        padding: 5px 10px;
+      }
+      .cache {
+        gap: 12px;
+        padding: 14px 20px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: var(--surface);
+      }
+      .backup {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      #backupNote {
+        font: var(--ui-small);
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <nav><div class="nav-inner">
+      <div class="brand"><span class="wordmark">dusk<b>.</b></span><span class="version" id="version"></span></div>
+      <a href="#general"><span class="icon" data-icon="sliders-horizontal"></span>General</a>
+      <a href="#appearance"><span class="icon" data-icon="palette"></span>Appearance</a>
+      <a href="#schedule"><span class="icon" data-icon="clock"></span>Schedule</a>
+      <a href="#sites"><span class="icon" data-icon="globe"></span>Sites</a>
+      <a href="#fixes"><span class="icon" data-icon="crosshair"></span>Your fixes</a>
+      <a href="#shortcuts"><span class="icon" data-icon="keyboard"></span>Shortcuts</a>
+      <a href="#about"><span class="icon" data-icon="gauge"></span>About</a>
+    </div></nav>
+
+    <main>
+      <section id="general">
+        <div>
+          <h2>General</h2>
+          <p class="desc">How Dusk behaves on sites you haven't set up yourself.</p>
+        </div>
+        <div class="card">
+          <label class="row"
+            ><span class="row-text"
+              ><strong>Dark mode everywhere</strong><span>Turns Dusk on or off for every site at once. <span class="globalKeys">⌥⇧D</span> does the same.</span></span
+            ><input type="checkbox" class="switch" id="enabled"
+          /></label>
+          <div class="row">
+            <span class="row-text"
+              ><strong>Default engine</strong
+              ><span>Dynamic rewrites each site's colors and keeps images untouched. Filter inverts the page on the GPU: the cheapest option, less faithful.</span></span
+            >
+            <div class="seg engine" id="engine" role="group" aria-label="Default engine">
+              <button data-engine="dynamic">Dynamic</button><button data-engine="filter">Filter</button>
+            </div>
+          </div>
+          <label class="row"
+            ><span class="row-text"
+              ><strong>Leave dark sites alone</strong><span>Sites that are dark already, or ship their own dark theme, are left as the designer made them.</span></span
+            ><input type="checkbox" class="switch" id="detectDark"
+          /></label>
+          <label class="row"
+            ><span class="row-text"
+              ><strong>Fix low-contrast text</strong
+              ><span>After a page loads, Dusk checks visible text against what's actually behind it and lightens anything below WCAG AA (4.5:1).</span></span
+            ><input type="checkbox" class="switch" id="fixContrast"
+          /></label>
+          <label class="row"
+            ><span class="row-text"
+              ><strong>Only on sites I turn on</strong><span>Allow-list mode: every site stays as it is until you pick a mode for it.</span></span
+            ><input type="checkbox" class="switch" id="onlyListed"
+          /></label>
+        </div>
+      </section>
+
+      <section id="appearance">
+        <div>
+          <h2>Appearance</h2>
+          <p class="desc">Applies to Dynamic and Filter modes on every site. Changes show up on open tabs immediately.</p>
+        </div>
+        <div class="appearance">
+          <div class="controls">
+            <label class="slider"><span>Brightness</span><input type="range" id="brightness" min="50" max="150" /><output></output></label>
+            <label class="slider"><span>Contrast</span><input type="range" id="contrast" min="50" max="150" /><output></output></label>
+            <label class="slider"><span>Sepia</span><input type="range" id="sepia" min="0" max="100" /><output></output></label>
+            <label class="slider"><span>Grayscale</span><input type="range" id="grayscale" min="0" max="100" /><output></output></label>
+            <div class="color-pickers">
+              <label class="picker"><input type="color" id="bgColor" /><span><small>Background</small><code id="bgHex"></code></span></label>
+              <label class="picker"><input type="color" id="fgColor" /><span><small>Text</small><code id="fgHex"></code></span></label>
+            </div>
+            <button class="link" id="resetTheme">Reset to defaults</button>
+          </div>
+          <div class="preview" id="preview" aria-label="Preview of a light page with these settings">
+            <span class="kicker" data-role="muted">PREVIEW</span>
+            <h3 data-role="title">Release notes, October</h3>
+            <p data-role="body">Faster sync, a new export format and two fixes for keyboard navigation in tables.</p>
+            <div class="callout" data-role="callout">Upgrade before Nov 3.</div>
+            <a data-role="link" href="#appearance">Read the changelog →</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="schedule">
+        <div>
+          <h2>Schedule</h2>
+          <p class="desc">When Dusk is active. Outside these hours every page looks exactly as the site designed it.</p>
+        </div>
+        <div class="choices">
+          <label class="choice"
+            ><span class="choice-top"><input type="radio" name="automation" value="always" />Always</span><span class="note">Dark on every visit.</span></label
+          >
+          <label class="choice"
+            ><span class="choice-top"><input type="radio" name="automation" value="system" />With the system</span
+            ><span class="note">Follows macOS / Windows dark mode.</span></label
+          >
+          <label class="choice"
+            ><span class="choice-top"><input type="radio" name="automation" value="time" />On a schedule</span>
+            <span class="times"
+              ><input type="time" id="timeFrom" aria-label="From" /><span class="icon" data-icon="arrow-right"></span
+              ><input type="time" id="timeTo" aria-label="To" /></span
+          ></label>
+        </div>
+      </section>
+
+      <section id="sites">
+        <div>
+          <h2>Sites</h2>
+          <p class="desc">Sites with their own mode. Everything else uses the default engine.</p>
+        </div>
+        <div class="card">
+          <div class="toolbar">
+            <label class="search"><span class="icon" data-icon="search"></span><input type="search" id="siteSearch" /></label>
+            <button class="btn btn-primary" id="addSite"><span class="icon" data-icon="plus"></span>Add site</button>
+          </div>
+          <form class="new-site" id="newSite" hidden>
+            <input class="text-input" id="newHost" placeholder="example.com" autocomplete="off" spellcheck="false" />
+            <span class="select"
+              ><select id="newMode">
+                <option value="dynamic">Dynamic</option>
+                <option value="filter">Filter</option>
+                <option value="off">Off</option></select
+              ><span class="icon" data-icon="chevrons-up-down"></span
+            ></span>
+            <button class="btn btn-primary" type="submit">Add</button>
+            <button class="btn btn-quiet" type="button" id="cancelSite">Cancel</button>
+          </form>
+          <div id="siteError" hidden></div>
+          <div id="siteList"></div>
+        </div>
+      </section>
+
+      <section id="fixes">
+        <div class="section-head">
+          <div>
+            <h2>Your fixes</h2>
+            <p class="desc">Elements you fixed with "Fix a spot" in the popup. They apply whenever Dusk darkens that site.</p>
+          </div>
+          <button class="btn" id="copyFixes"><span class="icon" data-icon="file-code"></span>Copy as Dark Reader fix</button>
+        </div>
+        <div class="card" id="fixList"></div>
+      </section>
+
+      <section id="shortcuts">
+        <div>
+          <h2>Shortcuts</h2>
+          <p class="desc">Change them in <a href="#" id="openShortcuts">chrome://extensions/shortcuts</a>.</p>
+        </div>
+        <div class="card" id="shortcutList"></div>
+      </section>
+
+      <section id="about">
+        <div>
+          <h2>About</h2>
+          <p class="desc" id="aboutLine">MIT · site fixes from Dark Reader's community configs (MIT).</p>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong id="statScript">—</strong><span>script added to each page</span></div>
+          <div class="stat"><strong>0</strong><span>elements added to pages</span></div>
+          <div class="stat"><strong id="statFixes">—</strong><span>site fixes from Dark Reader</span></div>
+        </div>
+        <div class="row cache">
+          <span class="row-text"><strong>Remember sites to load faster</strong><span id="cacheInfo"></span></span>
+          <button class="btn" id="clearCache">Clear cache</button>
+          <input type="checkbox" class="switch" id="rememberSites" aria-label="Remember sites to load faster" />
+        </div>
+        <div class="backup">
+          <button class="btn" id="exportSettings"><span class="icon" data-icon="download"></span>Export settings</button>
+          <button class="btn" id="importSettings"><span class="icon" data-icon="upload"></span>Import settings</button>
+          <input type="file" id="importFile" accept="application/json,.json" hidden />
+          <span id="backupNote" role="status"></span>
+        </div>
+      </section>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>

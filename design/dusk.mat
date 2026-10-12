@@ -1,0 +1,2381 @@
+{
+  "version": "2.19",
+  "children": [
+    {
+      "type": "frame",
+      "id": "58Hfs",
+      "name": "Brand components",
+      "x": 0,
+      "y": 0,
+      "layout": "horizontal",
+      "gap": 64,
+      "padding": 64,
+      "fill": "$bg",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "DKnxK",
+          "name": "Brand / Mark",
+          "reusable": true,
+          "width": 160,
+          "height": 160,
+          "layout": "none",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "IwxFn",
+              "name": "Monogram",
+              "x": 0,
+              "y": 0,
+              "width": 160,
+              "height": 160,
+              "textGrowth": "fixed-width-height",
+              "textAlign": "center",
+              "textAlignVertical": "middle",
+              "content": "d.",
+              "fontFamily": "Inter Tight",
+              "fontSize": 128,
+              "fontWeight": "800",
+              "letterSpacing": -4,
+              "fill": "$text",
+              "styleRuns": [
+                {
+                  "start": 1,
+                  "end": 2,
+                  "fill": "$accent"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "dWmxu",
+          "name": "Brand / Wordmark",
+          "reusable": true,
+          "layout": "horizontal",
+          "children": [
+            {
+              "type": "text",
+              "id": "EIxjD",
+              "name": "Name",
+              "content": "dusk",
+              "fontFamily": "Inter Tight",
+              "fontSize": 96,
+              "fontWeight": "700",
+              "letterSpacing": -4,
+              "fill": "$text"
+            },
+            {
+              "type": "text",
+              "id": "76pZf",
+              "name": "Sun",
+              "content": ".",
+              "fontFamily": "Inter Tight",
+              "fontSize": 96,
+              "fontWeight": "700",
+              "letterSpacing": -4,
+              "fill": "$accent"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "1RPGV",
+          "name": "Brand / App icon",
+          "reusable": true,
+          "width": 128,
+          "height": 128,
+          "cornerRadius": 28,
+          "fill": "$bg",
+          "stroke": "$border",
+          "strokeWidth": 1,
+          "layout": "none",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "clip": true,
+          "children": [
+            {
+              "type": "ref",
+              "id": "DLDsJ",
+              "ref": "DKnxK",
+              "name": "Mark",
+              "x": -4,
+              "y": -4,
+              "width": 136,
+              "height": 136
+            }
+          ],
+          "padding": 0
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "3VPnP",
+      "name": "Logo sheet",
+      "x": 0,
+      "y": 408,
+      "width": 1440,
+      "layout": "vertical",
+      "gap": 64,
+      "padding": [
+        80,
+        96
+      ],
+      "fill": "$bg",
+      "clip": true,
+      "placeholder": false,
+      "children": [
+        {
+          "type": "frame",
+          "id": "6t3Fa",
+          "name": "Header",
+          "width": "fill_container",
+          "justifyContent": "space_between",
+          "alignItems": "end",
+          "children": [
+            {
+              "type": "frame",
+              "id": "ZpBGL",
+              "name": "Title",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "IxU8Y",
+                  "name": "Kicker",
+                  "content": "BRAND · v0.2",
+                  "fontFamily": "JetBrains Mono",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "lineHeight": 1.35,
+                  "letterSpacing": 0.5,
+                  "textStyle": "Label",
+                  "fill": "$muted"
+                },
+                {
+                  "type": "text",
+                  "id": "BGaUN",
+                  "name": "Heading",
+                  "content": "Dusk identity",
+                  "textStyle": "H2",
+                  "fill": "$text",
+                  "fontFamily": "Inter Tight",
+                  "fontSize": 36,
+                  "fontWeight": "600",
+                  "lineHeight": 1.15,
+                  "letterSpacing": -0.4
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "lfPmm",
+              "name": "Note",
+              "content": "The period is the sun going down.\nIt is the only warm colour Dusk uses.",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "400",
+              "lineHeight": 1.45,
+              "textStyle": "Small",
+              "fill": "$muted",
+              "textAlign": "right"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "G0r5J",
+          "name": "Primary wordmark",
+          "width": "fill_container",
+          "height": 360,
+          "fill": "$surface",
+          "cornerRadius": 24,
+          "layout": "horizontal",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "ref",
+              "id": "8eiJz",
+              "ref": "dWmxu",
+              "name": "Wordmark"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "3UvFn",
+          "name": "Backgrounds",
+          "width": "fill_container",
+          "gap": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "Jzm7F",
+              "name": "On paper",
+              "width": "fill_container",
+              "height": 220,
+              "fill": "$paper",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "gap": 16,
+              "stroke": "$border",
+              "strokeWidth": 0,
+              "children": [
+                {
+                  "type": "ref",
+                  "id": "awWDC",
+                  "ref": "dWmxu",
+                  "name": "Wordmark",
+                  "descendants": {
+                    "EIxjD": {
+                      "fontSize": 64,
+                      "fill": "$paper-ink",
+                      "letterSpacing": -2.4
+                    },
+                    "76pZf": {
+                      "fontSize": 64,
+                      "fill": "$accent",
+                      "letterSpacing": -2.4
+                    }
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "AWBz1",
+                  "name": "Caption",
+                  "content": "ON PAPER",
+                  "fontFamily": "JetBrains Mono",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "lineHeight": 1.35,
+                  "letterSpacing": 0.5,
+                  "textStyle": "Label",
+                  "fill": "$paper-ink",
+                  "opacity": 0.7
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "hayiN",
+              "name": "On violet",
+              "width": "fill_container",
+              "height": 220,
+              "fill": "$primary",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "gap": 16,
+              "stroke": "$border",
+              "strokeWidth": 0,
+              "children": [
+                {
+                  "type": "ref",
+                  "id": "VmRyI",
+                  "ref": "dWmxu",
+                  "name": "Wordmark",
+                  "descendants": {
+                    "EIxjD": {
+                      "fontSize": 64,
+                      "fill": "$on-primary",
+                      "letterSpacing": -2.4
+                    },
+                    "76pZf": {
+                      "fontSize": 64,
+                      "fill": "$accent",
+                      "letterSpacing": -2.4
+                    }
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "Rp3Lx",
+                  "name": "Caption",
+                  "content": "ON VIOLET",
+                  "fontFamily": "JetBrains Mono",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "lineHeight": 1.35,
+                  "letterSpacing": 0.5,
+                  "textStyle": "Label",
+                  "fill": "$on-primary",
+                  "opacity": 0.7
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "NCFvo",
+              "name": "One colour",
+              "width": "fill_container",
+              "height": 220,
+              "fill": "$bg",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "gap": 16,
+              "stroke": "$border",
+              "strokeWidth": 1,
+              "children": [
+                {
+                  "type": "ref",
+                  "id": "sjbIz",
+                  "ref": "dWmxu",
+                  "name": "Wordmark",
+                  "descendants": {
+                    "EIxjD": {
+                      "fontSize": 64,
+                      "fill": "$muted",
+                      "letterSpacing": -2.4
+                    },
+                    "76pZf": {
+                      "fontSize": 64,
+                      "fill": "$muted",
+                      "letterSpacing": -2.4
+                    }
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "ucGjh",
+                  "name": "Caption",
+                  "content": "ONE COLOUR",
+                  "fontFamily": "JetBrains Mono",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "lineHeight": 1.35,
+                  "letterSpacing": 0.5,
+                  "textStyle": "Label",
+                  "fill": "$muted",
+                  "opacity": 0.7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "7n4LR",
+          "name": "Details",
+          "width": "fill_container",
+          "gap": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "VNxEQ",
+              "name": "App icons",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "padding": 32,
+              "fill": "$surface",
+              "cornerRadius": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "sQahM",
+                  "name": "Label",
+                  "content": "APP ICON · 128 / 48 / 32 / 16",
+                  "fontFamily": "JetBrains Mono",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "lineHeight": 1.35,
+                  "letterSpacing": 0.5,
+                  "textStyle": "Label",
+                  "fill": "$muted"
+                },
+                {
+                  "type": "frame",
+                  "id": "QonGZ",
+                  "name": "Sizes",
+                  "gap": 32,
+                  "alignItems": "end",
+                  "children": [
+                    {
+                      "type": "ref",
+                      "id": "ZFKcp",
+                      "ref": "1RPGV",
+                      "name": "Icon 128"
+                    },
+                    {
+                      "type": "ref",
+                      "id": "wUPc7",
+                      "ref": "1RPGV",
+                      "name": "Icon 48",
+                      "width": 48,
+                      "height": 48,
+                      "cornerRadius": 10.6,
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "ref",
+                      "id": "ScxaM",
+                      "ref": "1RPGV",
+                      "name": "Icon 32",
+                      "width": 32,
+                      "height": 32,
+                      "cornerRadius": 7,
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "ref",
+                      "id": "ibJnH",
+                      "ref": "1RPGV",
+                      "name": "Icon 16",
+                      "width": 16,
+                      "height": 16,
+                      "cornerRadius": 3.5,
+                      "strokeWidth": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "87sAe",
+              "name": "Palette",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 32,
+              "fill": "$surface",
+              "cornerRadius": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "JbZKB",
+                  "name": "Label",
+                  "content": "COLOUR",
+                  "fontFamily": "JetBrains Mono",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "lineHeight": 1.35,
+                  "letterSpacing": 0.5,
+                  "textStyle": "Label",
+                  "fill": "$muted"
+                },
+                {
+                  "type": "frame",
+                  "id": "rOblQ",
+                  "name": "Swatch Ink",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "wSq7H",
+                      "name": "Chip",
+                      "width": 28,
+                      "height": 28,
+                      "cornerRadius": 8,
+                      "fill": "$bg",
+                      "stroke": "$border",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "ZLlrZ",
+                      "name": "Name",
+                      "content": "Ink",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "400",
+                      "lineHeight": 1.45,
+                      "textStyle": "Small",
+                      "fill": "$text",
+                      "width": "fill_container",
+                      "textGrowth": "fixed-width"
+                    },
+                    {
+                      "type": "text",
+                      "id": "m3WJC",
+                      "name": "Hex",
+                      "content": "#0F0E17",
+                      "fontFamily": "JetBrains Mono",
+                      "fontSize": 12,
+                      "fontWeight": "500",
+                      "lineHeight": 1.35,
+                      "letterSpacing": 0.5,
+                      "textStyle": "Label",
+                      "fill": "$muted"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Pzf4C",
+                  "name": "Swatch Surface",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "v36Qm",
+                      "name": "Chip",
+                      "width": 28,
+                      "height": 28,
+                      "cornerRadius": 8,
+                      "fill": "$surface",
+                      "stroke": "$border",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "ALfYi",
+                      "name": "Name",
+                      "content": "Surface",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "400",
+                      "lineHeight": 1.45,
+                      "textStyle": "Small",
+                      "fill": "$text",
+                      "width": "fill_container",
+                      "textGrowth": "fixed-width"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Vv6LZ",
+                      "name": "Hex",
+                      "content": "#191722",
+                      "fontFamily": "JetBrains Mono",
+                      "fontSize": 12,
+                      "fontWeight": "500",
+                      "lineHeight": 1.35,
+                      "letterSpacing": 0.5,
+                      "textStyle": "Label",
+                      "fill": "$muted"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "g0vUJ",
+                  "name": "Swatch Dusk violet",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "AisU3",
+                      "name": "Chip",
+                      "width": 28,
+                      "height": 28,
+                      "cornerRadius": 8,
+                      "fill": "$primary",
+                      "stroke": "$border",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "lCtRS",
+                      "name": "Name",
+                      "content": "Dusk violet",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "400",
+                      "lineHeight": 1.45,
+                      "textStyle": "Small",
+                      "fill": "$text",
+                      "width": "fill_container",
+                      "textGrowth": "fixed-width"
+                    },
+                    {
+                      "type": "text",
+                      "id": "GXo8S",
+                      "name": "Hex",
+                      "content": "#A896FF",
+                      "fontFamily": "JetBrains Mono",
+                      "fontSize": 12,
+                      "fontWeight": "500",
+                      "lineHeight": 1.35,
+                      "letterSpacing": 0.5,
+                      "textStyle": "Label",
+                      "fill": "$muted"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "GLx0U",
+                  "name": "Swatch Ember",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "ZBXyU",
+                      "name": "Chip",
+                      "width": 28,
+                      "height": 28,
+                      "cornerRadius": 8,
+                      "fill": "$accent",
+                      "stroke": "$border",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "E7Qpc",
+                      "name": "Name",
+                      "content": "Ember",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "400",
+                      "lineHeight": 1.45,
+                      "textStyle": "Small",
+                      "fill": "$text",
+                      "width": "fill_container",
+                      "textGrowth": "fixed-width"
+                    },
+                    {
+                      "type": "text",
+                      "id": "i9Af0",
+                      "name": "Hex",
+                      "content": "#FF9466",
+                      "fontFamily": "JetBrains Mono",
+                      "fontSize": 12,
+                      "fontWeight": "500",
+                      "lineHeight": 1.35,
+                      "letterSpacing": 0.5,
+                      "textStyle": "Label",
+                      "fill": "$muted"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "yB7Yd",
+                  "name": "Swatch Mist",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "tjwQE",
+                      "name": "Chip",
+                      "width": 28,
+                      "height": 28,
+                      "cornerRadius": 8,
+                      "fill": "$text",
+                      "stroke": "$border",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "D3jhx",
+                      "name": "Name",
+                      "content": "Mist",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "400",
+                      "lineHeight": 1.45,
+                      "textStyle": "Small",
+                      "fill": "$text",
+                      "width": "fill_container",
+                      "textGrowth": "fixed-width"
+                    },
+                    {
+                      "type": "text",
+                      "id": "KuUBx",
+                      "name": "Hex",
+                      "content": "#EDEAF5",
+                      "fontFamily": "JetBrains Mono",
+                      "fontSize": 12,
+                      "fontWeight": "500",
+                      "lineHeight": 1.35,
+                      "letterSpacing": 0.5,
+                      "textStyle": "Label",
+                      "fill": "$muted"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "s9mG6",
+                  "name": "Swatch Paper",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "nZXQr",
+                      "name": "Chip",
+                      "width": 28,
+                      "height": 28,
+                      "cornerRadius": 8,
+                      "fill": "$paper",
+                      "stroke": "$border",
+                      "strokeWidth": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "e7p8H",
+                      "name": "Name",
+                      "content": "Paper",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "400",
+                      "lineHeight": 1.45,
+                      "textStyle": "Small",
+                      "fill": "$text",
+                      "width": "fill_container",
+                      "textGrowth": "fixed-width"
+                    },
+                    {
+                      "type": "text",
+                      "id": "NIjtz",
+                      "name": "Hex",
+                      "content": "#F6F3EE",
+                      "fontFamily": "JetBrains Mono",
+                      "fontSize": 12,
+                      "fontWeight": "500",
+                      "lineHeight": 1.35,
+                      "letterSpacing": 0.5,
+                      "textStyle": "Label",
+                      "fill": "$muted"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "duCXB",
+              "name": "Type",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 32,
+              "fill": "$surface",
+              "cornerRadius": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "J35bh",
+                  "name": "Label",
+                  "content": "TYPE",
+                  "fontFamily": "JetBrains Mono",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "lineHeight": 1.35,
+                  "letterSpacing": 0.5,
+                  "textStyle": "Label",
+                  "fill": "$muted"
+                },
+                {
+                  "type": "text",
+                  "id": "WXgoU",
+                  "name": "Display sample",
+                  "content": "Inter Tight",
+                  "fontFamily": "Inter Tight",
+                  "fontSize": 40,
+                  "fontWeight": "700",
+                  "letterSpacing": -1.2,
+                  "fill": "$text"
+                },
+                {
+                  "type": "text",
+                  "id": "zuGXf",
+                  "name": "Text sample",
+                  "content": "Inter for reading, set at 16/24.",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "400",
+                  "lineHeight": 1.5,
+                  "textStyle": "Body",
+                  "fill": "$muted"
+                },
+                {
+                  "type": "text",
+                  "id": "Pa7ZQ",
+                  "name": "Mono sample",
+                  "content": "JetBrains Mono — 72.6 ms",
+                  "fontFamily": "JetBrains Mono",
+                  "fontSize": 20,
+                  "fontWeight": "500",
+                  "fill": "$primary"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "zh1mG",
+      "name": "README hero",
+      "x": 1560,
+      "y": 408,
+      "width": 1280,
+      "height": 640,
+      "fill": "$bg",
+      "clip": true,
+      "layout": "horizontal",
+      "padding": [
+        72,
+        0,
+        72,
+        80
+      ],
+      "gap": 56,
+      "alignItems": "center",
+      "placeholder": false,
+      "children": [
+        {
+          "type": "frame",
+          "id": "4QbkO",
+          "name": "Copy",
+          "width": 470,
+          "layout": "vertical",
+          "gap": 28,
+          "children": [
+            {
+              "type": "ref",
+              "id": "fGZ7m",
+              "ref": "dWmxu",
+              "name": "Wordmark",
+              "descendants": {
+                "EIxjD": {
+                  "fontSize": 56,
+                  "letterSpacing": -2.2
+                },
+                "76pZf": {
+                  "fontSize": 56,
+                  "letterSpacing": -2.2
+                }
+              }
+            },
+            {
+              "type": "text",
+              "id": "8edVG",
+              "name": "Headline",
+              "content": "Dark mode for the whole web, at a tenth of the weight.",
+              "fontFamily": "Inter Tight",
+              "fontSize": 44,
+              "fontWeight": "700",
+              "lineHeight": 1.08,
+              "letterSpacing": -1.4,
+              "fill": "$text",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "type": "text",
+              "id": "EUv88",
+              "name": "Proof",
+              "content": "36 KB of script per page instead of Dark Reader's 390 KB. On GitHub it spends 73 ms of main-thread time where Dark Reader spends 301 ms.",
+              "fontFamily": "Inter",
+              "fontSize": 17,
+              "fontWeight": "400",
+              "lineHeight": 1.5,
+              "textStyle": "Body",
+              "fill": "$muted",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "type": "frame",
+              "id": "7lhm5",
+              "name": "Facts",
+              "gap": 8,
+              "wrap": true,
+              "width": "fill_container",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "KZju3",
+                  "name": "Fact Chrome · MV3",
+                  "padding": [
+                    6,
+                    10
+                  ],
+                  "cornerRadius": 6,
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "M6rHU",
+                      "name": "Text",
+                      "content": "Chrome · MV3",
+                      "fontFamily": "JetBrains Mono",
+                      "fontSize": 12,
+                      "fontWeight": "500",
+                      "lineHeight": 1.35,
+                      "letterSpacing": 0.5,
+                      "textStyle": "Label",
+                      "fill": "$muted"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Ndwqi",
+                  "name": "Fact MIT",
+                  "padding": [
+                    6,
+                    10
+                  ],
+                  "cornerRadius": 6,
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "phtBY",
+                      "name": "Text",
+                      "content": "MIT",
+                      "fontFamily": "JetBrains Mono",
+                      "fontSize": 12,
+                      "fontWeight": "500",
+                      "lineHeight": 1.35,
+                      "letterSpacing": 0.5,
+                      "textStyle": "Label",
+                      "fill": "$muted"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "DoHqP",
+                  "name": "Fact 2,900 site fixes",
+                  "padding": [
+                    6,
+                    10
+                  ],
+                  "cornerRadius": 6,
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "BEa1K",
+                      "name": "Text",
+                      "content": "2,900 site fixes",
+                      "fontFamily": "JetBrains Mono",
+                      "fontSize": 12,
+                      "fontWeight": "500",
+                      "lineHeight": 1.35,
+                      "letterSpacing": 0.5,
+                      "textStyle": "Label",
+                      "fill": "$muted"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "U8FYn",
+          "name": "Browser",
+          "width": 640,
+          "height": 480,
+          "cornerRadius": 14,
+          "fill": "$surface",
+          "stroke": "$border",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "clip": true,
+          "effect": [
+            {
+              "type": "shadow",
+              "color": "#00000066",
+              "offset": {
+                "x": 0,
+                "y": 24
+              },
+              "blur": 64
+            }
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "EsMAg",
+              "name": "Chrome bar",
+              "width": "fill_container",
+              "height": 40,
+              "padding": [
+                0,
+                14
+              ],
+              "gap": 8,
+              "alignItems": "center",
+              "fill": "$raised",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "egLpM",
+                  "name": "Dot",
+                  "width": 10,
+                  "height": 10,
+                  "fill": "#3A3648"
+                },
+                {
+                  "type": "ellipse",
+                  "id": "zpWnw",
+                  "name": "Dot",
+                  "width": 10,
+                  "height": 10,
+                  "fill": "#3A3648"
+                },
+                {
+                  "type": "ellipse",
+                  "id": "XiwbS",
+                  "name": "Dot",
+                  "width": 10,
+                  "height": 10,
+                  "fill": "#3A3648"
+                },
+                {
+                  "type": "frame",
+                  "id": "3KtEr",
+                  "name": "Address",
+                  "width": "fill_container",
+                  "height": 24,
+                  "cornerRadius": 6,
+                  "fill": "$surface",
+                  "padding": [
+                    0,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "0YdBW",
+                      "name": "URL",
+                      "content": "developer.example.org/guides/css-custom-properties",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "$muted"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "odzuO",
+                  "name": "Extension",
+                  "width": 24,
+                  "height": 24,
+                  "cornerRadius": 6,
+                  "fill": "$bg",
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "UoHNb",
+                      "name": "d.",
+                      "content": "d.",
+                      "fontFamily": "Inter Tight",
+                      "fontSize": 13,
+                      "fontWeight": "800",
+                      "fill": "$text",
+                      "styleRuns": [
+                        {
+                          "start": 1,
+                          "end": 2,
+                          "fill": "$accent"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ldjDW",
+              "name": "Viewport",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "none",
+              "clip": true,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "PdImk",
+                  "name": "Light page",
+                  "x": 0,
+                  "y": 0,
+                  "width": 640,
+                  "height": 440,
+                  "fill": "$paper",
+                  "layout": "vertical",
+                  "padding": [
+                    32,
+                    36
+                  ],
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "EEph4",
+                      "name": "Breadcrumb",
+                      "content": "Guides  /  CSS",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "fill": "$paper-muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "T9CrH",
+                      "name": "Title",
+                      "content": "Using CSS custom properties",
+                      "fontFamily": "Inter Tight",
+                      "fontSize": 30,
+                      "fontWeight": "700",
+                      "letterSpacing": -0.8,
+                      "fill": "$paper-ink"
+                    },
+                    {
+                      "type": "text",
+                      "id": "IBZqF",
+                      "name": "Para 1",
+                      "content": "Custom properties hold values you reuse across a stylesheet. Declare them once on :root and every rule that reads them updates together.",
+                      "fontFamily": "Inter",
+                      "fontSize": 13.5,
+                      "lineHeight": 1.6,
+                      "fill": "$paper-ink",
+                      "textGrowth": "fixed-width",
+                      "width": 540
+                    },
+                    {
+                      "type": "frame",
+                      "id": "j65ER",
+                      "name": "Code",
+                      "width": 540,
+                      "padding": [
+                        14,
+                        16
+                      ],
+                      "cornerRadius": 8,
+                      "fill": "#ECE7DF",
+                      "layout": "vertical",
+                      "gap": 2,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Q873B",
+                          "name": "L1",
+                          "content": ":root { --surface: #ffffff; --ink: #1c1a22; }",
+                          "fontFamily": "JetBrains Mono",
+                          "fontSize": 12,
+                          "fill": "#3B3744"
+                        },
+                        {
+                          "type": "text",
+                          "id": "s24Lw",
+                          "name": "L2",
+                          "content": ".card { background: var(--surface); color: var(--ink); }",
+                          "fontFamily": "JetBrains Mono",
+                          "fontSize": 12,
+                          "fill": "#3B3744"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "ZiABC",
+                      "name": "Para 2",
+                      "content": "Themes swap a handful of variables instead of rewriting hundreds of rules. Read more about fallback values and inheritance.",
+                      "fontFamily": "Inter",
+                      "fontSize": 13.5,
+                      "lineHeight": 1.6,
+                      "fill": "$paper-ink",
+                      "textGrowth": "fixed-width",
+                      "width": 540,
+                      "styleRuns": [
+                        {
+                          "start": 85,
+                          "end": 122,
+                          "fill": "#3557C7",
+                          "underline": true
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "9pKYE",
+                      "name": "Rule",
+                      "width": 540,
+                      "height": 1,
+                      "fill": "$paper-line"
+                    },
+                    {
+                      "type": "text",
+                      "id": "6YPSt",
+                      "name": "Next",
+                      "content": "Next: Cascade layers →",
+                      "fontFamily": "Inter",
+                      "fontSize": 12.5,
+                      "fontWeight": "600",
+                      "fill": "#3557C7"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "9gqz7",
+                  "name": "Dusk half",
+                  "x": 320,
+                  "y": 0,
+                  "width": 320,
+                  "height": 440,
+                  "layout": "none",
+                  "clip": true,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "lg5mL",
+                      "name": "Dark page",
+                      "x": -320,
+                      "y": 0,
+                      "width": 640,
+                      "height": 440,
+                      "fill": "#181A1B",
+                      "layout": "vertical",
+                      "padding": [
+                        32,
+                        36
+                      ],
+                      "gap": 14,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "YDtcX",
+                          "name": "Breadcrumb",
+                          "content": "Guides  /  CSS",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "500",
+                          "fill": "#9C978E"
+                        },
+                        {
+                          "type": "text",
+                          "id": "euCGr",
+                          "name": "Title",
+                          "content": "Using CSS custom properties",
+                          "fontFamily": "Inter Tight",
+                          "fontSize": 30,
+                          "fontWeight": "700",
+                          "letterSpacing": -0.8,
+                          "fill": "#E8E6E3"
+                        },
+                        {
+                          "type": "text",
+                          "id": "DkurY",
+                          "name": "Para 1",
+                          "content": "Custom properties hold values you reuse across a stylesheet. Declare them once on :root and every rule that reads them updates together.",
+                          "fontFamily": "Inter",
+                          "fontSize": 13.5,
+                          "lineHeight": 1.6,
+                          "fill": "#E8E6E3",
+                          "textGrowth": "fixed-width",
+                          "width": 540
+                        },
+                        {
+                          "type": "frame",
+                          "id": "07Z6n",
+                          "name": "Code",
+                          "width": 540,
+                          "padding": [
+                            14,
+                            16
+                          ],
+                          "cornerRadius": 8,
+                          "fill": "#232224",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "w9VbA",
+                              "name": "L1",
+                              "content": ":root { --surface: #ffffff; --ink: #1c1a22; }",
+                              "fontFamily": "JetBrains Mono",
+                              "fontSize": 12,
+                              "fill": "#CFCAC2"
+                            },
+                            {
+                              "type": "text",
+                              "id": "gvoi7",
+                              "name": "L2",
+                              "content": ".card { background: var(--surface); color: var(--ink); }",
+                              "fontFamily": "JetBrains Mono",
+                              "fontSize": 12,
+                              "fill": "#CFCAC2"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "tLlks",
+                          "name": "Para 2",
+                          "content": "Themes swap a handful of variables instead of rewriting hundreds of rules. Read more about fallback values and inheritance.",
+                          "fontFamily": "Inter",
+                          "fontSize": 13.5,
+                          "lineHeight": 1.6,
+                          "fill": "#E8E6E3",
+                          "textGrowth": "fixed-width",
+                          "width": 540,
+                          "styleRuns": [
+                            {
+                              "start": 85,
+                              "end": 122,
+                              "fill": "#8FA8F0",
+                              "underline": true
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "5fztY",
+                          "name": "Rule",
+                          "width": 540,
+                          "height": 1,
+                          "fill": "#33302B"
+                        },
+                        {
+                          "type": "text",
+                          "id": "ouzOz",
+                          "name": "Next",
+                          "content": "Next: Cascade layers →",
+                          "fontFamily": "Inter",
+                          "fontSize": 12.5,
+                          "fontWeight": "600",
+                          "fill": "#8FA8F0"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "sbT72",
+                  "name": "Horizon",
+                  "x": 319,
+                  "y": 0,
+                  "width": 2,
+                  "height": 440,
+                  "fill": "$accent"
+                },
+                {
+                  "type": "frame",
+                  "id": "QOkmg",
+                  "name": "Sun",
+                  "x": 305,
+                  "y": 205,
+                  "width": 30,
+                  "height": 30,
+                  "cornerRadius": 15,
+                  "fill": "$accent",
+                  "effect": [
+                    {
+                      "type": "shadow",
+                      "color": "#FF946666",
+                      "offset": {
+                        "x": 0,
+                        "y": 0
+                      },
+                      "blur": 24
+                    }
+                  ],
+                  "stroke": "$bg",
+                  "strokeWidth": 3,
+                  "strokeAlignment": "outer"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "YhmaU",
+      "name": "Store — Small promo tile",
+      "x": 1560,
+      "y": 1168,
+      "width": 440,
+      "height": 280,
+      "fill": "$bg",
+      "clip": true,
+      "layout": "none",
+      "placeholder": false,
+      "children": [
+        {
+          "type": "ellipse",
+          "id": "Ijf3v",
+          "name": "Sun glow",
+          "x": 236,
+          "y": 136,
+          "width": 240,
+          "height": 240,
+          "fill": {
+            "type": "gradient",
+            "gradientType": "radial",
+            "colors": [
+              {
+                "color": "#FF946640",
+                "position": 0
+              },
+              {
+                "color": "#FF946600",
+                "position": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "ellipse",
+          "id": "CWrxP",
+          "name": "Sun",
+          "x": 296,
+          "y": 196,
+          "width": 120,
+          "height": 120,
+          "fill": "$accent",
+          "startAngle": 0,
+          "sweepAngle": 180
+        },
+        {
+          "type": "frame",
+          "id": "pOXX8",
+          "name": "Below horizon",
+          "x": 0,
+          "y": 256,
+          "width": 440,
+          "height": 24,
+          "fill": "$bg"
+        },
+        {
+          "type": "frame",
+          "id": "5OHOZ",
+          "name": "Horizon",
+          "x": 0,
+          "y": 255,
+          "width": 440,
+          "height": 1,
+          "fill": "$border"
+        },
+        {
+          "type": "ref",
+          "id": "4AVOR",
+          "ref": "dWmxu",
+          "name": "Wordmark",
+          "x": 32,
+          "y": 28,
+          "descendants": {
+            "EIxjD": {
+              "fontSize": 48,
+              "letterSpacing": -1.8
+            },
+            "76pZf": {
+              "fontSize": 48,
+              "letterSpacing": -1.8
+            }
+          }
+        },
+        {
+          "type": "text",
+          "id": "Rxsjp",
+          "name": "Line",
+          "x": 34,
+          "y": 112,
+          "width": 240,
+          "textGrowth": "fixed-width",
+          "content": "Dark mode for every site. 36 KB per page.",
+          "fontFamily": "Inter Tight",
+          "fontSize": 22,
+          "fontWeight": "600",
+          "lineHeight": 1.2,
+          "letterSpacing": -0.4,
+          "fill": "$text"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "hDSkA",
+      "name": "Store — Marquee",
+      "x": 1560,
+      "y": 1568,
+      "width": 1400,
+      "height": 560,
+      "fill": "$bg",
+      "clip": true,
+      "layout": "horizontal",
+      "padding": [
+        56,
+        0,
+        56,
+        112
+      ],
+      "gap": 80,
+      "alignItems": "center",
+      "placeholder": false,
+      "children": [
+        {
+          "type": "frame",
+          "id": "vJgYf",
+          "name": "Copy",
+          "width": 470,
+          "layout": "vertical",
+          "gap": 28,
+          "children": [
+            {
+              "type": "ref",
+              "id": "Dyl80",
+              "ref": "dWmxu",
+              "name": "Wordmark",
+              "descendants": {
+                "EIxjD": {
+                  "fontSize": 56,
+                  "letterSpacing": -2.2
+                },
+                "76pZf": {
+                  "fontSize": 56,
+                  "letterSpacing": -2.2
+                }
+              }
+            },
+            {
+              "type": "text",
+              "id": "C6PvY",
+              "name": "Headline",
+              "content": "Dark mode for the whole web, at a tenth of the weight.",
+              "fontFamily": "Inter Tight",
+              "fontSize": 44,
+              "fontWeight": "700",
+              "lineHeight": 1.08,
+              "letterSpacing": -1.4,
+              "fill": "$text",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "type": "text",
+              "id": "dWWNi",
+              "name": "Proof",
+              "content": "36 KB of script per page instead of Dark Reader's 390 KB. On GitHub it spends 73 ms of main-thread time where Dark Reader spends 301 ms.",
+              "fontFamily": "Inter",
+              "fontSize": 17,
+              "fontWeight": "400",
+              "lineHeight": 1.5,
+              "textStyle": "Body",
+              "fill": "$muted",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "type": "frame",
+              "id": "KNvSi",
+              "name": "Facts",
+              "gap": 8,
+              "wrap": true,
+              "width": "fill_container",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "VKCM4",
+                  "name": "Fact Chrome · MV3",
+                  "padding": [
+                    6,
+                    10
+                  ],
+                  "cornerRadius": 6,
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "bxyw9",
+                      "name": "Text",
+                      "content": "Chrome · MV3",
+                      "fontFamily": "JetBrains Mono",
+                      "fontSize": 12,
+                      "fontWeight": "500",
+                      "lineHeight": 1.35,
+                      "letterSpacing": 0.5,
+                      "textStyle": "Label",
+                      "fill": "$muted"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "OCcGM",
+                  "name": "Fact MIT",
+                  "padding": [
+                    6,
+                    10
+                  ],
+                  "cornerRadius": 6,
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "krZFX",
+                      "name": "Text",
+                      "content": "MIT",
+                      "fontFamily": "JetBrains Mono",
+                      "fontSize": 12,
+                      "fontWeight": "500",
+                      "lineHeight": 1.35,
+                      "letterSpacing": 0.5,
+                      "textStyle": "Label",
+                      "fill": "$muted"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "nKpL5",
+                  "name": "Fact 2,900 site fixes",
+                  "padding": [
+                    6,
+                    10
+                  ],
+                  "cornerRadius": 6,
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ci6dE",
+                      "name": "Text",
+                      "content": "2,900 site fixes",
+                      "fontFamily": "JetBrains Mono",
+                      "fontSize": 12,
+                      "fontWeight": "500",
+                      "lineHeight": 1.35,
+                      "letterSpacing": 0.5,
+                      "textStyle": "Label",
+                      "fill": "$muted"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "G1dhp",
+          "name": "Browser",
+          "width": 640,
+          "height": 480,
+          "cornerRadius": 14,
+          "fill": "$surface",
+          "stroke": "$border",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "clip": true,
+          "effect": [
+            {
+              "type": "shadow",
+              "color": "#00000066",
+              "offset": {
+                "x": 0,
+                "y": 24
+              },
+              "blur": 64
+            }
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "gCy5w",
+              "name": "Chrome bar",
+              "width": "fill_container",
+              "height": 40,
+              "padding": [
+                0,
+                14
+              ],
+              "gap": 8,
+              "alignItems": "center",
+              "fill": "$raised",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "hrK9b",
+                  "name": "Dot",
+                  "width": 10,
+                  "height": 10,
+                  "fill": "#3A3648"
+                },
+                {
+                  "type": "ellipse",
+                  "id": "DQ6wj",
+                  "name": "Dot",
+                  "width": 10,
+                  "height": 10,
+                  "fill": "#3A3648"
+                },
+                {
+                  "type": "ellipse",
+                  "id": "7Jsqx",
+                  "name": "Dot",
+                  "width": 10,
+                  "height": 10,
+                  "fill": "#3A3648"
+                },
+                {
+                  "type": "frame",
+                  "id": "Rf9FM",
+                  "name": "Address",
+                  "width": "fill_container",
+                  "height": 24,
+                  "cornerRadius": 6,
+                  "fill": "$surface",
+                  "padding": [
+                    0,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "272Ty",
+                      "name": "URL",
+                      "content": "developer.example.org/guides/css-custom-properties",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "$muted"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "i2dQQ",
+                  "name": "Extension",
+                  "width": 24,
+                  "height": 24,
+                  "cornerRadius": 6,
+                  "fill": "$bg",
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "52M9N",
+                      "name": "d.",
+                      "content": "d.",
+                      "fontFamily": "Inter Tight",
+                      "fontSize": 13,
+                      "fontWeight": "800",
+                      "fill": "$text",
+                      "styleRuns": [
+                        {
+                          "start": 1,
+                          "end": 2,
+                          "fill": "$accent"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "DBZ7p",
+              "name": "Viewport",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "none",
+              "clip": true,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "B4hD9",
+                  "name": "Light page",
+                  "x": 0,
+                  "y": 0,
+                  "width": 640,
+                  "height": 440,
+                  "fill": "$paper",
+                  "layout": "vertical",
+                  "padding": [
+                    32,
+                    36
+                  ],
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "01z3z",
+                      "name": "Breadcrumb",
+                      "content": "Guides  /  CSS",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "fill": "$paper-muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "wjLbD",
+                      "name": "Title",
+                      "content": "Using CSS custom properties",
+                      "fontFamily": "Inter Tight",
+                      "fontSize": 30,
+                      "fontWeight": "700",
+                      "letterSpacing": -0.8,
+                      "fill": "$paper-ink"
+                    },
+                    {
+                      "type": "text",
+                      "id": "myyEf",
+                      "name": "Para 1",
+                      "content": "Custom properties hold values you reuse across a stylesheet. Declare them once on :root and every rule that reads them updates together.",
+                      "fontFamily": "Inter",
+                      "fontSize": 13.5,
+                      "lineHeight": 1.6,
+                      "fill": "$paper-ink",
+                      "textGrowth": "fixed-width",
+                      "width": 540
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Ulq8R",
+                      "name": "Code",
+                      "width": 540,
+                      "padding": [
+                        14,
+                        16
+                      ],
+                      "cornerRadius": 8,
+                      "fill": "#ECE7DF",
+                      "layout": "vertical",
+                      "gap": 2,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "hEo3s",
+                          "name": "L1",
+                          "content": ":root { --surface: #ffffff; --ink: #1c1a22; }",
+                          "fontFamily": "JetBrains Mono",
+                          "fontSize": 12,
+                          "fill": "#3B3744"
+                        },
+                        {
+                          "type": "text",
+                          "id": "bUN46",
+                          "name": "L2",
+                          "content": ".card { background: var(--surface); color: var(--ink); }",
+                          "fontFamily": "JetBrains Mono",
+                          "fontSize": 12,
+                          "fill": "#3B3744"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "yBkIO",
+                      "name": "Para 2",
+                      "content": "Themes swap a handful of variables instead of rewriting hundreds of rules. Read more about fallback values and inheritance.",
+                      "fontFamily": "Inter",
+                      "fontSize": 13.5,
+                      "lineHeight": 1.6,
+                      "fill": "$paper-ink",
+                      "textGrowth": "fixed-width",
+                      "width": 540,
+                      "styleRuns": [
+                        {
+                          "start": 85,
+                          "end": 122,
+                          "fill": "#3557C7",
+                          "underline": true
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "1bD8Z",
+                      "name": "Rule",
+                      "width": 540,
+                      "height": 1,
+                      "fill": "$paper-line"
+                    },
+                    {
+                      "type": "text",
+                      "id": "la3yZ",
+                      "name": "Next",
+                      "content": "Next: Cascade layers →",
+                      "fontFamily": "Inter",
+                      "fontSize": 12.5,
+                      "fontWeight": "600",
+                      "fill": "#3557C7"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "IniAs",
+                  "name": "Dusk half",
+                  "x": 320,
+                  "y": 0,
+                  "width": 320,
+                  "height": 440,
+                  "layout": "none",
+                  "clip": true,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "GEMFP",
+                      "name": "Dark page",
+                      "x": -320,
+                      "y": 0,
+                      "width": 640,
+                      "height": 440,
+                      "fill": "#181A1B",
+                      "layout": "vertical",
+                      "padding": [
+                        32,
+                        36
+                      ],
+                      "gap": 14,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "QpT7Q",
+                          "name": "Breadcrumb",
+                          "content": "Guides  /  CSS",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "500",
+                          "fill": "#9C978E"
+                        },
+                        {
+                          "type": "text",
+                          "id": "sDHdD",
+                          "name": "Title",
+                          "content": "Using CSS custom properties",
+                          "fontFamily": "Inter Tight",
+                          "fontSize": 30,
+                          "fontWeight": "700",
+                          "letterSpacing": -0.8,
+                          "fill": "#E8E6E3"
+                        },
+                        {
+                          "type": "text",
+                          "id": "i12ht",
+                          "name": "Para 1",
+                          "content": "Custom properties hold values you reuse across a stylesheet. Declare them once on :root and every rule that reads them updates together.",
+                          "fontFamily": "Inter",
+                          "fontSize": 13.5,
+                          "lineHeight": 1.6,
+                          "fill": "#E8E6E3",
+                          "textGrowth": "fixed-width",
+                          "width": 540
+                        },
+                        {
+                          "type": "frame",
+                          "id": "GOEh0",
+                          "name": "Code",
+                          "width": 540,
+                          "padding": [
+                            14,
+                            16
+                          ],
+                          "cornerRadius": 8,
+                          "fill": "#232224",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "vNGCB",
+                              "name": "L1",
+                              "content": ":root { --surface: #ffffff; --ink: #1c1a22; }",
+                              "fontFamily": "JetBrains Mono",
+                              "fontSize": 12,
+                              "fill": "#CFCAC2"
+                            },
+                            {
+                              "type": "text",
+                              "id": "PZf5x",
+                              "name": "L2",
+                              "content": ".card { background: var(--surface); color: var(--ink); }",
+                              "fontFamily": "JetBrains Mono",
+                              "fontSize": 12,
+                              "fill": "#CFCAC2"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "bIVsF",
+                          "name": "Para 2",
+                          "content": "Themes swap a handful of variables instead of rewriting hundreds of rules. Read more about fallback values and inheritance.",
+                          "fontFamily": "Inter",
+                          "fontSize": 13.5,
+                          "lineHeight": 1.6,
+                          "fill": "#E8E6E3",
+                          "textGrowth": "fixed-width",
+                          "width": 540,
+                          "styleRuns": [
+                            {
+                              "start": 85,
+                              "end": 122,
+                              "fill": "#8FA8F0",
+                              "underline": true
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "LxIdu",
+                          "name": "Rule",
+                          "width": 540,
+                          "height": 1,
+                          "fill": "#33302B"
+                        },
+                        {
+                          "type": "text",
+                          "id": "vWP2s",
+                          "name": "Next",
+                          "content": "Next: Cascade layers →",
+                          "fontFamily": "Inter",
+                          "fontSize": 12.5,
+                          "fontWeight": "600",
+                          "fill": "#8FA8F0"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "u9mZF",
+                  "name": "Horizon",
+                  "x": 319,
+                  "y": 0,
+                  "width": 2,
+                  "height": 440,
+                  "fill": "$accent"
+                },
+                {
+                  "type": "frame",
+                  "id": "XoX9b",
+                  "name": "Sun",
+                  "x": 305,
+                  "y": 205,
+                  "width": 30,
+                  "height": 30,
+                  "cornerRadius": 15,
+                  "fill": "$accent",
+                  "effect": [
+                    {
+                      "type": "shadow",
+                      "color": "#FF946666",
+                      "offset": {
+                        "x": 0,
+                        "y": 0
+                      },
+                      "blur": 24
+                    }
+                  ],
+                  "stroke": "$bg",
+                  "strokeWidth": 3,
+                  "strokeAlignment": "outer"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "XcV24",
+      "name": "README benchmark",
+      "x": 2960,
+      "y": 408,
+      "width": 1280,
+      "fill": "$bg",
+      "clip": true,
+      "layout": "vertical",
+      "gap": 32,
+      "padding": [
+        64,
+        80
+      ],
+      "placeholder": true,
+      "children": [
+        {
+          "type": "frame",
+          "id": "8cxh1",
+          "name": "Header",
+          "width": "fill_container",
+          "justifyContent": "space_between",
+          "alignItems": "end",
+          "children": [
+            {
+              "type": "frame",
+              "id": "wAp41",
+              "name": "Titles",
+              "layout": "vertical",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "OJem3",
+                  "name": "Title",
+                  "content": "Main-thread time spent by the extension",
+                  "fontFamily": "Inter Tight",
+                  "fontSize": 36,
+                  "fontWeight": "600",
+                  "lineHeight": 1.15,
+                  "letterSpacing": -0.4,
+                  "textStyle": "H2",
+                  "fill": "$text"
+                },
+                {
+                  "type": "text",
+                  "id": "EYwcC",
+                  "name": "Subtitle",
+                  "content": "Median of 3 cold page loads · Chrome 155 · light system theme · lower is better",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "400",
+                  "lineHeight": 1.45,
+                  "textStyle": "Small",
+                  "fill": "$muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "8321n",
+              "name": "Legend",
+              "gap": 20,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "fiD6P",
+                  "name": "Dusk key",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "0OR6d",
+                      "name": "Swatch",
+                      "width": 12,
+                      "height": 12,
+                      "cornerRadius": 3,
+                      "fill": "$primary"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Ep50N",
+                      "name": "Label",
+                      "content": "Dusk",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "400",
+                      "lineHeight": 1.45,
+                      "textStyle": "Small",
+                      "fill": "$text"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "rNanx",
+                  "name": "DR key",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Vb0vz",
+                      "name": "Swatch",
+                      "width": 12,
+                      "height": 12,
+                      "cornerRadius": 3,
+                      "fill": "#4A4560"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Iqd7S",
+                      "name": "Label",
+                      "content": "Dark Reader 4.9.133",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "400",
+                      "lineHeight": 1.45,
+                      "textStyle": "Small",
+                      "fill": "$text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "script",
+          "id": "GzuQb",
+          "name": "Bars",
+          "width": "fill_container",
+          "height": 480,
+          "script": "\nconst rows = params.rows, max = params.max\nconst labelW = 170, valueW = 90, barH = 18, gapIn = 6, rowH = barH * 2 + gapIn + 22\nconst plotW = width - labelW - valueW\nctx.textBaseline = 'middle'\nrows.forEach((r, i) => {\n  const y = i * rowH\n  ctx.fillStyle = params.text; ctx.font = '600 16px Inter'\n  ctx.fillText(r.label, 0, y + barH + gapIn / 2)\n  const bars = [[r.dusk, params.dusk, params.text], [r.dr, params.dr, params.muted]]\n  bars.forEach(([v, color, ink], j) => {\n    const by = y + j * (barH + gapIn)\n    const w = Math.max(3, plotW * Math.min(v, max) / max)\n    ctx.fillStyle = color\n    ctx.beginPath(); ctx.roundRect(labelW, by, w, barH, 4); ctx.fill()\n    ctx.fillStyle = ink; ctx.font = (j === 0 ? '600 ' : '400 ') + '13px JetBrains Mono'\n    ctx.fillText(v.toFixed(0) + ' ms', labelW + w + 10, by + barH / 2)\n  })\n  if (r.note) { ctx.fillStyle = params.muted; ctx.font = '400 12px Inter'; ctx.fillText(r.note, 0, y + barH * 2 + gapIn + 10) }\n})",
+          "params": {
+            "rows": [
+              {
+                "label": "pending",
+                "dusk": 1,
+                "dr": 1
+              }
+            ],
+            "max": 100,
+            "dusk": "$primary",
+            "dr": "#4A4560",
+            "text": "$text",
+            "muted": "$muted"
+          }
+        },
+        {
+          "type": "text",
+          "id": "DKlC6",
+          "name": "Footnote",
+          "content": "pending",
+          "fontFamily": "Inter",
+          "fontSize": 14,
+          "fontWeight": "400",
+          "lineHeight": 1.45,
+          "textStyle": "Small",
+          "fill": "$muted",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "bg": {
+      "type": "color",
+      "value": "#0F0E17"
+    },
+    "surface": {
+      "type": "color",
+      "value": "#191722"
+    },
+    "raised": {
+      "type": "color",
+      "value": "#23202E"
+    },
+    "border": {
+      "type": "color",
+      "value": "#2F2B3D"
+    },
+    "text": {
+      "type": "color",
+      "value": "#EDEAF5"
+    },
+    "muted": {
+      "type": "color",
+      "value": "#9893AB"
+    },
+    "primary": {
+      "type": "color",
+      "value": "#A896FF"
+    },
+    "on-primary": {
+      "type": "color",
+      "value": "#15121F"
+    },
+    "accent": {
+      "type": "color",
+      "value": "#FF9466"
+    },
+    "paper": {
+      "type": "color",
+      "value": "#F6F3EE"
+    },
+    "paper-ink": {
+      "type": "color",
+      "value": "#1C1A22"
+    },
+    "paper-muted": {
+      "type": "color",
+      "value": "#6E6A78"
+    },
+    "paper-line": {
+      "type": "color",
+      "value": "#E4DFD6"
+    }
+  },
+  "textStyles": {
+    "Display": {
+      "fontFamily": "Inter Tight",
+      "fontSize": 72,
+      "fontWeight": "700",
+      "lineHeight": 1.05,
+      "letterSpacing": -2
+    },
+    "H2": {
+      "fontFamily": "Inter Tight",
+      "fontSize": 36,
+      "fontWeight": "600",
+      "lineHeight": 1.15,
+      "letterSpacing": -0.4
+    },
+    "Title": {
+      "fontFamily": "Inter Tight",
+      "fontSize": 20,
+      "fontWeight": "600",
+      "lineHeight": 1.3
+    },
+    "Body": {
+      "fontFamily": "Inter",
+      "fontSize": 16,
+      "fontWeight": "400",
+      "lineHeight": 1.5
+    },
+    "Small": {
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "lineHeight": 1.45
+    },
+    "Label": {
+      "fontFamily": "JetBrains Mono",
+      "fontSize": 12,
+      "fontWeight": "500",
+      "lineHeight": 1.35,
+      "letterSpacing": 0.5
+    }
+  },
+  "memory": "# Dusk brand\nDusk is a lightweight dark-mode browser extension (a fast Dark Reader alternative). Audience: developers and heavy readers. Tone: calm, precise, quietly confident about performance.\n\n## Identity\n- Idea: dusk = the sun sinking below the horizon = turning the light down.\n- Mark: half sun resting on a horizon line. Wordmark: lowercase \"dusk.\" in Inter Tight Bold, the period in ember ($accent) as a setting sun.\n- Palette: ink $bg #0F0E17, violet $primary #A896FF, ember $accent #FF9466 (sparingly), paper #F6F3EE for \"light page\" depictions.\n- Type: Inter Tight (display), Inter (text), JetBrains Mono (numbers, labels).\n\n## Rules\n- No purple-to-blue gradients. Ember is the only warm colour and appears once per view.\n- Numbers come from the real benchmark (bench/out/run.log), never invented."
+}

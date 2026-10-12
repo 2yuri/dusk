@@ -1,0 +1,8 @@
+node_modules
+dist
+release
+bench/vendor
+bench/out
+# Regenerated from design/dusk.mat; the ones the README uses are in docs/images.
+design/export
+.DS_Store

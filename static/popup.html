@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dusk</title>
+    <link rel="stylesheet" href="ui.css" />
+    <style>
+      /* design/dusk.mat: "Popup — Active" and its states */
+      body {
+        width: 360px;
+      }
+      .section {
+        padding: 16px;
+      }
+      .rule-top {
+        border-top: 1px solid var(--border);
+      }
+      .rule-bottom {
+        border-bottom: 1px solid var(--border);
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--border);
+      }
+      header .wordmark {
+        font-size: 22px;
+        letter-spacing: -0.8px;
+      }
+      .everywhere {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font: var(--ui-small);
+        color: var(--muted);
+        cursor: pointer;
+      }
+      .banner {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 16px;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        font: var(--ui-small);
+      }
+      .banner .icon {
+        width: 16px;
+        height: 16px;
+        color: var(--accent);
+      }
+      #site {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        padding: 16px 16px 18px;
+      }
+      .site-line {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .favicon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+        width: 28px;
+        height: 28px;
+        border-radius: 7px;
+        background: var(--raised);
+      }
+      .favicon img {
+        width: 16px;
+        height: 16px;
+      }
+      .favicon .icon {
+        width: 15px;
+        height: 15px;
+      }
+      .site-text {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        flex: 1;
+        min-width: 0;
+      }
+      #host {
+        font: 600 14px/1.4 'Inter', system-ui, sans-serif;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .status {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font: var(--ui-small);
+        color: var(--muted);
+      }
+      .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--muted);
+        flex: none;
+      }
+      .dot.on {
+        background: var(--primary);
+      }
+      #darken {
+        padding: 5px 10px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: none;
+        font: 500 12px/1.4 'Inter', system-ui, sans-serif;
+        white-space: nowrap;
+      }
+      #darken:hover {
+        background: var(--raised);
+      }
+      #hint {
+        margin: 0;
+        font: var(--ui-small);
+        color: var(--muted);
+      }
+      .dim {
+        opacity: 0.38;
+      }
+      #adjust {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .colors {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding-top: 4px;
+      }
+      .swatch {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font: var(--ui-small);
+        color: var(--muted);
+        cursor: pointer;
+      }
+      .swatch input {
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        padding: 0;
+        border: 1px solid var(--border);
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .swatch input::-webkit-color-swatch-wrapper {
+        padding: 0;
+      }
+      .swatch input::-webkit-color-swatch {
+        border: 0;
+        border-radius: 50%;
+      }
+      .colors .link {
+        margin-left: auto;
+      }
+      .strip {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 16px;
+        border-top: 1px solid var(--border);
+      }
+      .fact {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 8px;
+        border-radius: 6px;
+        background: var(--surface);
+        font: var(--ui-small);
+        white-space: nowrap;
+      }
+      .fact .icon {
+        width: 13px;
+        height: 13px;
+        color: var(--muted);
+      }
+      .fact .mono {
+        font: 400 11.5px var(--mono);
+      }
+      .fix-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-left: auto;
+        padding: 5px 10px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: none;
+        font: 500 12px/1.4 'Inter', system-ui, sans-serif;
+        white-space: nowrap;
+      }
+      .fix-btn:hover:not(:disabled) {
+        background: var(--raised);
+      }
+      .fix-btn:disabled {
+        opacity: 0.4;
+        cursor: default;
+      }
+      .fix-btn .icon {
+        width: 13px;
+        height: 13px;
+      }
+      footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 16px;
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+      }
+      #shortcuts {
+        font: 400 11px var(--mono);
+        color: var(--muted);
+      }
+      #allSettings {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 0;
+        border: 0;
+        background: none;
+        font: 500 12px/1.4 'Inter', system-ui, sans-serif;
+      }
+      #allSettings .icon {
+        width: 13px;
+        height: 13px;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span class="wordmark">dusk<b>.</b></span>
+      <label class="everywhere"
+        ><span id="enabledLabel">On everywhere</span><input type="checkbox" class="switch" id="enabled"
+      /></label>
+    </header>
+
+    <div class="banner" id="offBanner" hidden>
+      <span class="icon" data-icon="sun"></span>
+      <span>Dusk is off on every site. Flip the switch or press <span id="globalKeys">⌥⇧D</span> to bring it back.</span>
+    </div>
+
+    <section id="site">
+      <div class="site-line">
+        <span class="favicon" id="favicon"></span>
+        <div class="site-text">
+          <span id="host">This page</span>
+          <span class="status"><span class="dot" id="dot"></span><span id="status"></span></span>
+        </div>
+        <button id="darken" hidden>Darken anyway</button>
+      </div>
+      <div class="seg" id="modes" role="group" aria-label="Mode for this site">
+        <button data-mode="auto">Auto</button>
+        <button data-mode="dynamic">Dynamic</button>
+        <button data-mode="filter">Filter</button>
+        <button data-mode="off">Off</button>
+      </div>
+      <p id="hint"></p>
+    </section>
+
+    <section class="strip" id="strip">
+      <span class="fact" title="Main-thread time Dusk's own work took on this page"
+        ><span class="icon" data-icon="gauge"></span><span class="mono" id="cost">—</span></span
+      >
+      <span class="fact" id="contrastFact"><span class="icon" id="contrastIcon" data-icon="contrast"></span><span id="contrastText">Checking…</span></span>
+      <button class="fix-btn" id="pick"><span class="icon" data-icon="crosshair"></span>Fix a spot</button>
+    </section>
+
+    <section class="section rule-top" id="adjust">
+      <label class="slider"><span>Brightness</span><input type="range" id="brightness" min="50" max="150" /><output></output></label>
+      <label class="slider"><span>Contrast</span><input type="range" id="contrast" min="50" max="150" /><output></output></label>
+      <label class="slider"><span>Sepia</span><input type="range" id="sepia" min="0" max="100" /><output></output></label>
+      <label class="slider"><span>Grayscale</span><input type="range" id="grayscale" min="0" max="100" /><output></output></label>
+      <div class="colors">
+        <label class="swatch"><input type="color" id="bgColor" />Background</label>
+        <label class="swatch"><input type="color" id="fgColor" />Text</label>
+        <button class="link" id="resetTheme">Reset</button>
+      </div>
+    </section>
+
+    <footer>
+      <span id="shortcuts"></span>
+      <button id="allSettings">All settings <span class="icon" data-icon="arrow-up-right"></span></button>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "name": "dusk",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs --watch",
+    "typecheck": "tsc --noEmit",
+    "test:unit": "node --test test/unit.test.ts",
+    "test:e2e": "npm run build && node --test --test-concurrency=1 test/e2e.test.mjs",
+    "test": "npm run typecheck && npm run test:unit && npm run test:e2e",
+    "bench": "npm run build && node bench/run.mjs",
+    "fixes": "node tools/fixes.mjs --update",
+    "ui": "npm run build && node bench/ui-shots.mjs && node bench/compare.mjs",
+    "package": "node tools/package.mjs"
+  },
+  "devDependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/inter-tight": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@types/chrome": "^0.3.5",
+    "@types/node": "^26.6.5",
+    "esbuild": "^0.28.2",
+    "lucide-static": "^1.55.0",
+    "puppeteer": "^25.13.0",
+    "typescript": "^7.0.2"
+  },
+  "description": "Dark mode for every website, built to cost as little as possible.",
+  "license": "MIT"
+}

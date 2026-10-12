@@ -1,0 +1,336 @@
+/* Tokens, type and components from design/dusk.mat ("UI components" board). */
+
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/inter.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('fonts/inter-tight.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: block;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('fonts/jetbrains-mono.woff2') format('woff2');
+  font-weight: 100 800;
+  font-display: block;
+}
+
+:root {
+  --bg: #0f0e17;
+  --surface: #191722;
+  --raised: #23202e;
+  --border: #2f2b3d;
+  --text: #edeaf5;
+  --muted: #9893ab;
+  --primary: #a896ff;
+  --on-primary: #15121f;
+  --accent: #ff9466;
+  --ui: 400 13px/1.4 'Inter', system-ui, sans-serif;
+  --ui-strong: 600 13px/1.4 'Inter', system-ui, sans-serif;
+  --ui-small: 400 12px/1.4 'Inter', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  --display: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: var(--ui);
+  -webkit-font-smoothing: antialiased;
+}
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+}
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+[hidden] {
+  display: none !important;
+}
+.icon {
+  display: inline-flex;
+  flex: none;
+}
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+.muted {
+  color: var(--muted);
+}
+
+/* Brand / Wordmark */
+.wordmark {
+  font-family: var(--display);
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+  line-height: 1.21;
+}
+.wordmark b {
+  font-weight: inherit;
+  color: var(--accent);
+}
+
+/* Switch: 36x20, knob 14, padding 3 */
+.switch {
+  appearance: none;
+  flex: none;
+  width: 36px;
+  height: 20px;
+  margin: 0;
+  border-radius: 10px;
+  background: var(--border);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.switch::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--muted);
+  transition: transform 0.15s, background 0.15s;
+}
+.switch:checked {
+  background: var(--primary);
+}
+.switch:checked::after {
+  transform: translateX(16px);
+  background: var(--on-primary);
+}
+
+/* Segmented control */
+.seg {
+  display: flex;
+  gap: 3px;
+  padding: 3px;
+  border-radius: 9px;
+  background: var(--surface);
+}
+.seg button {
+  flex: 1;
+  height: 30px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  font: var(--ui);
+}
+.seg button:hover:not(:disabled):not([aria-pressed='true']) {
+  color: var(--text);
+}
+.seg button[aria-pressed='true'] {
+  background: var(--primary);
+  color: var(--on-primary);
+  font: var(--ui-strong);
+}
+.seg button:disabled {
+  cursor: default;
+}
+
+/* Slider row: label 76, track, value 32 */
+.slider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.slider > span:first-child {
+  width: 76px;
+  flex: none;
+}
+.slider output {
+  width: 32px;
+  flex: none;
+  text-align: right;
+  font: 400 12px var(--mono);
+  color: var(--muted);
+}
+input[type='range'] {
+  appearance: none;
+  flex: 1;
+  min-width: 0;
+  height: 14px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  --p: 50%;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(var(--primary), var(--primary)) 0 / var(--p) 100% no-repeat, var(--border);
+}
+input[type='range']::-webkit-slider-thumb {
+  appearance: none;
+  box-sizing: border-box;
+  width: 14px;
+  height: 14px;
+  margin-top: -5px;
+  border: 2px solid var(--bg);
+  border-radius: 50%;
+  background: var(--text);
+}
+
+/* Select: h30, padding 0 10, chevrons-up-down */
+.select {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.select select {
+  appearance: none;
+  /* Hug the chosen option, like the design, instead of the longest one. */
+  field-sizing: content;
+  height: 30px;
+  padding: 0 32px 0 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--raised);
+  font: var(--ui);
+  cursor: pointer;
+}
+.select .icon {
+  position: absolute;
+  right: 10px;
+  width: 14px;
+  height: 14px;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+  font: var(--ui-strong);
+  white-space: nowrap;
+}
+.btn:hover {
+  background: var(--raised);
+}
+.btn .icon {
+  width: 14px;
+  height: 14px;
+  color: var(--muted);
+}
+.btn-primary {
+  height: 34px;
+  padding: 0 14px;
+  border: 0;
+  background: var(--primary);
+  color: var(--on-primary);
+}
+.btn-primary:hover {
+  background: #b8a9ff;
+}
+.btn-primary .icon {
+  color: var(--on-primary);
+}
+.btn-quiet {
+  height: 34px;
+  border: 0;
+  color: var(--muted);
+}
+.link {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: 500 12px/1.4 'Inter', system-ui, sans-serif;
+  color: var(--primary);
+}
+.link:hover {
+  text-decoration: underline;
+}
+.text-input {
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  font: 400 14px/1.4 'Inter', system-ui, sans-serif;
+  outline: none;
+}
+.text-input:focus {
+  border: 1.5px solid var(--primary);
+}
+
+/* Site row */
+.site-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 36px;
+  padding: 0 4px 0 10px;
+  border-radius: 6px;
+}
+.site-row:hover {
+  background: var(--raised);
+}
+.site-row .host {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tag {
+  appearance: none;
+  padding: 2px 8px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--raised);
+  color: var(--muted);
+  font: 400 11px var(--mono);
+  cursor: pointer;
+  text-align: center;
+}
+.site-row:hover .tag {
+  background: var(--border);
+}
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: var(--muted);
+}
+.icon-btn:hover {
+  background: var(--border);
+  color: var(--text);
+}
+.icon-btn .icon {
+  width: 14px;
+  height: 14px;
+}
